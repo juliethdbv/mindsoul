@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Mind&Soul</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet"
+    type="text/css">
+  <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js"
+    type="text/javascript"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="../../assets/css/app.min.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/bundles/prism/prism.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="../../assets/css/stylesjo.css">
+
+  <link rel='shortcut icon' type='image/x-icon' href='../../../images/Logo-Mind-Soul-Imagen.png' />
+  <link rel="stylesheet" href="../../assets/bundles/datatables/datatables.min.css">
+  <link rel="stylesheet" href="../../assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel='shortcut icon' type='image/x-icon' href='../../../images/Logo-Mind-Soul-Imagen.png' />
+  <script src="https://kit.fontawesome.com/6131ecdde6.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="main-content">
+
+    <!-- dashboard-Inicio-Admins.html  CONTENIDO -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Mi Agenda</h4>
+            <div class="card-header-form">
+              <form>
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <a th:href="@{/psicologo/formagenda}"><button type="button" class="btn btn-primary">Registrar Agenda</button></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-striped" id="datat">
+                <thead>
+                  <th>Id</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Tiempo</th>
+                  <th>Enlace</th>
+                  <th colspan="2">Acciones</th>
+                </thead>
+                <thbody>
+                  <tr th:if="${citas.size()>0}" th:each="cita:${citas}">
+                    <td th:if="${cita.stateAppointment == false}" th:text="${cita.id}"></td>
+                    <td th:if="${cita.stateAppointment == false}" th:text="${cita.date}"></td>
+                    <td th:if="${cita.stateAppointment == false}" th:text="${cita.hour}"></td>
+                    <td th:if="${cita.stateAppointment == false}" th:text="${cita.time}"></td>
+                    <td><a th:if="${cita.stateAppointment == false}" target="_blank" th:text="${cita.link}" th:href="${cita.link}"></a></td>
+                    <td th:if="${cita.stateAppointment == false}">
+                      <a role="button" class="btn btn-danger" th:href="@{/psicologo/deleteAg/}+${cita.id}">
+                        Deshacer
+                      </a>
+                    </td>
+                  </tr>
+                </thbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Layaout -->
+
+    <div class="loader"></div>
+    <div id="app">
+      <div class="main-wrapper main-wrapper-1">
+        <div class="navbar-bg"></div>
+
+        <!-- Menú -->
+
+        <nav class="navbar navbar-expand-lg main-navbar sticky">
+          <div class="form-inline mr-auto">
+
+            <ul class="navbar-nav mr-3">
+
+              <li>
+                <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg collapse-btn">
+                  <i data-feather="align-justify"></i>
+                </a>
+              </li>
+
+              <li>
+                <form class="form-inline mr-4">
+                  <div class="search-element">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
+                    <button class="btn" type="submit">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </li>
+
+            </ul>
+
+            <ul class="navbar-nav nav-right position-fixed" style="margin-left: 75%;">
+
+              <li class="dropdown">
+
+                <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                  <figure class="avatar md-2 avatar-m bg-primary text-white radious-style" data-initial="MS"></figure>
+                  <span class="d-sm-none d-lg-inline-block"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right pullDown">
+
+                  <div class="dropdown-title"></div>
+
+                  <a th:href="@{/psicologo}" class="dropdown-item has-icon">
+                    <i class="far fa-user"></i> Mi Informacion
+                  </a>
+
+                  <div class="dropdown-divider"></div>
+
+                  <a th:href="@{/logout}" class="dropdown-item has-icon text-danger">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesion
+                  </a>
+
+                </div>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </nav>
+
+        <!-- Menú -->
+
+        <!-- Modulos -->
+
+        <div class="main-sidebar sidebar-style-2">
+          <aside id="sidebar-wrapper">
+
+            <div class="sidebar-brand">
+              <img th:src="@{/images/Logo-Mind-Soul-Imagen.png}" width="60px" height="60px">
+              <a href="">
+                <span class="logo-name">Mind &
+                  <span class="color1">Soul</span>
+                </span>
+              </a>
+            </div><br>
+
+            <ul class="sidebar-menu">
+
+              <li class="menu-header">Menu</li>
+
+              <li class="dropdown">
+                <a th:href="@{/psicologo}" class="nav-link">
+                  <i data-feather="home"></i>
+                  <span class="color">Home</span>
+                </a>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown">
+                  <i data-feather="calendar"></i>
+                  <span>Citas</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" th:href="@{/psicologo/listarcita}">Mis Citas</a></li>
+                  <li><a class="nav-link" th:href="@{/psicologo/listaragenda}">Agenda</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a th:href="@{listarh}" class="nav-link">
+                  <i data-feather="book"></i>
+                  <span class="color">Historial Paciente</span></a>
+              </li>
+
+            </ul>
+
+          </aside>
+
+        </div>
+
+        <!-- Modulos -->
+      </div>
+
+    </div>
+    <!-- Layaout -->
+
+      <!-- Configuración Diseño -->
+
+      <div class="settingSidebar">
+        <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
+        </a>
+        <div class="settingSidebar-body ps-container ps-theme-default">
+          <div class=" fade show active">
+            <div class="setting-panel-header">Panel de Configuración
+            </div>
+  
+            <div class="p-15 border-bottom">
+              <h6 class="font-medium m-b-10">Sidebar Color</h6>
+              <div class="selectgroup selectgroup-pills sidebar-color">
+                <label class="selectgroup-item">
+                  <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
+                  <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                    data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
+                </label>
+                <label class="selectgroup-item">
+                  <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
+                  <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                    data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
+                </label>
+              </div>
+            </div>
+            <div class="p-15 border-bottom">
+              <h6 class="font-medium m-b-10">Color Theme</h6>
+              <div class="theme-setting-options">
+                <ul class="choose-theme list-unstyled mb-0">
+                  <li title="white" class="active">
+                    <div class="white"></div>
+                  </li>
+                  <li title="cyan">
+                    <div class="cyan"></div>
+                  </li>
+                  <li title="black">
+                    <div class="black"></div>
+                  </li>
+                  <li title="purple">
+                    <div class="purple"></div>
+                  </li>
+                  <li title="orange">
+                    <div class="orange"></div>
+                  </li>
+                  <li title="green">
+                    <div class="green"></div>
+                  </li>
+                  <li title="red">
+                    <div class="red"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="p-15 border-bottom">
+              <div class="theme-setting-options">
+                <label class="m-b-0">
+                  <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                    id="mini_sidebar_setting">
+                  <span class="custom-switch-indicator"></span>
+                  <span class="control-label p-l-10">Mini Sidebar</span>
+                </label>
+              </div>
+            </div>
+            <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
+              <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
+                <i class="fas fa-undo"></i> Restore Default
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Configuración Diseño -->
+      
+  </div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+<script th:src="@{/assets/js/mainCita.js}"></script>
+<!-- General JS Scripts -->
+<script src="../../assets/js/app.min.js"></script>
+<!-- JS Libraies -->
+<!-- Page Specific JS File -->
+<!-- Template JS File -->
+<script src="../../assets/js/scripts.js"></script>
+<script src="../../assets/bundles/prism/prism.js"></script>
+<!-- Custom JS File -->
+<script src="../../assets/js/custom.js"></script>
+<!-- JS Libraies -->
+<script src="../../assets/bundles/datatables/datatables.min.js"></script>
+<script src="../../assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+  var datat = document.querySelector("#datat");
+  var dataTable = new DataTable("#datat", {
+    perPage: 10,
+    labels: {
+      placeholder: "Busca por campo...",
+      perPage: "{select} registros por pagina",
+      noRows: "No se encontraron registros",
+      info: "Mostrando {start} a {end} de {rows} registros",
+    }
+  });
+
+</script>
+
+</html>

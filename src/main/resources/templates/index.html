@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es" mlns:th="https://www.thymeleaf.org">
+
+<!-- Mirrored from pixner.net/behoof/demo/home-two.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Mar 2020 15:00:35 GMT -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mind&Soul</title>
+  <link rel="shortcut icon" type="image/png" th:href="@{/images/Logo-Mind-Soul-Imagen.png}" />
+  <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+  <link rel="stylesheet" th:href="@{/css/icofont.css}">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/lightcase.css}">
+  <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+  <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
+  <link rel="stylesheet" th:href="@{/css/nice-select.css}">
+  <link rel="stylesheet" th:href="@{/css/animate.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/responsive.css}">
+</head>
+
+<body>
+
+  <!-- preloader start -->
+  <div class="preloader">
+    <div class="preloader-box">
+      <div>L</div>
+      <div>O</div>
+      <div>A</div>
+      <div>D</div>
+      <div>I</div>
+      <div>N</div>
+      <div>G</div>
+    </div>
+  </div>
+  <!-- preloader end -->
+
+  <!--  header-section start  -->
+  <header class="header-section header--fixed">
+    <div class="header-bottom">
+      <div class="container">
+        <nav class="navbar navbar-expand-xl p-0">
+          <a class="site-logo site-title" href="#">
+            <img th:src="@{/images/Mind-Soul-Sin-Slogan.png}" alt="site-logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="menu-toggle"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav main-menu ml-auto">
+              <li class="active menu_has_children">
+                <a href="#index">Inicio</a>
+              </li>
+              <li>
+                <a href="#information">Ventajas</a>
+              </li>
+              <li>
+                <a href="#services">Servicios</a>
+              </li>
+              <li>
+                <a href="#virtual-dating">Registro</a>
+              </li>
+              <li>
+                <a href="#contact">Contacto</a>
+              </li>
+            </ul>
+            <div class="header-join-part ml-3">
+              <a class="btn btn-primary btn-round" th:href="@{/login}">Iniciar Sesión</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div><!-- header-bottom end -->
+  </header>
+  <!--  header-section end  -->
+
+  <!-- banner-section start -->
+  <section class="banner-section bg_img" data-background="images/home2-bg.jpg" id="index">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="banner-content-area">
+            <div class="banner-content text-center">
+              <h2 class="banner-title">¡AGENDA YA TU CITA!</h2>
+            </div>
+            <div class="banner-btn-area justify-content-center">
+              <a th:href="@{/login}" class="btn btn-primary btn-round">¡Empieza Ahora!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="banner-content-area">
+            <div class="banner-content text-center">
+              <div class="banner-elements-image anim-bounce-two">
+                <img class="" th:src="@{/images/calendar-index.svg}" alt="image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- choose-us-section start -->
+
+  <section class="choose-us-section pt-120 pb-120 bg_img" data-background="images/elements/choose-us-bg-shape.png"
+    id="information">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-header text-center">
+            <span class="section-subtitle">Agendamiento Citas Virtuales de Psicología</span>
+            <h2 class="section-title">Bienvenido a Mind&Soul</h2>
+            <p>Mind&Soul es un sistema de información muy asequible, es totalmente
+              gratuito para una mejor experiencia disfrutando de todas las funciones que tiene este software.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid p-0">
+      <div class="row m-0">
+        <div class="col-lg-12 p-0">
+          <div class="choose-us-slider owl-carousel">
+            <div class="choose-item text-center">
+              <div class="choose-thumb">
+                <img th:src="@{/images/choose-us/3.png}" alt="image">
+              </div>
+              <div class="choose-content">
+                <h3 class="title">Velocidad</h3>
+                <p>Al agendar la cita, nuestros servicios estarán disponibles lo más pronto posible.</p>
+              </div>
+            </div><!-- choose-item end -->
+            <div class="choose-item text-center">
+              <div class="choose-thumb">
+                <img th:src="@{/images/choose-us/2.png}" alt="image">
+              </div>
+              <div class="choose-content">
+                <h3 class="title">Virtualidad</h3>
+                <p>Nuestras citas se realizan de manera virtual para mejor accesibilidad.</p>
+              </div>
+            </div><!-- choose-item end -->
+            <div class="choose-item text-center">
+              <div class="choose-thumb">
+                <img th:src="@{/images/choose-us/1.png}" alt="image">
+              </div>
+              <div class="choose-content">
+                <h3 class="title">Ahorra dinero</h3>
+                <p>Sistema completamente gratiuto con seguimiento constante y organizado.</p>
+              </div>
+            </div><!-- choose-item end -->
+            <div class="choose-item text-center">
+              <div class="choose-thumb">
+                <img th:src="@{/images/choose-us/4.png}" alt="image">
+              </div>
+              <div class="choose-content">
+                <h3 class="title">Soporte 24/7</h3>
+                <p>Contamos con un soporte y atención al cliente para satisfacerte al momento de una inquietud.</p>
+              </div>
+            </div><!-- choose-item end -->
+            <div class="choose-item text-center">
+              <div class="choose-thumb">
+                <img th:src="@{/images/choose-us/5.png}" alt="image">
+              </div>
+              <div class="choose-content">
+                <h3 class="title">Atención al cliente</h3>
+                <p>Eres escencial para nosotros, por ello contamos con el apartado de ayuda, el cual se encuentra al
+                  final de esta página.</p>
+              </div>
+            </div><!-- choose-item end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- choose-us-section end -->
+
+  <!-- features-section start -->
+  <section class="features-section pt-120 pb-xl-120" id="services">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-header text-center">
+            <span class="section-subtitle">¡No lo dudes más, nosotros te ayudamos!</span>
+            <h2 class="section-title">Servivios Mind&Soul</h2>
+            <p>Brindamos Servicios de sesiones en línea con diferentes especialistas que harán que te sientas cómodo
+              todo el tiempo, mereces amarte, <br>¡No dejes pasar esta increíble oportunidad!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="feature-thumb wow fadeIn" data-hrefwow-duration="2s" data-wow-delay="0.5s">
+            <img th:src="@{/img/psychology/undraw_Super_thank_you_re_f8bo.png}" alt="image">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="feature-item wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s">
+            <div class="icon">
+              <div class="icon-inner">
+                <img th:src="@{/images/icons/investment/1.svg}" alt="icon">
+              </div>
+            </div>
+            <div class="content">
+              <h3 class="title">Psicología Clínica</h3>
+              <p>Es una de las mayores áreas de especialidas, esta prática se enfoca en el diagnóstico y tratamiento de
+                enfermedades mentales, como la fobias, depresión y esquizofrenia, entre otras.</p>
+            </div>
+          </div><!-- feature-item end -->
+          <div class="feature-item wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
+            <div class="icon">
+              <div class="icon-inner">
+                <img th:src="@{/images/icons/investment/2.svg}" alt="icon">
+              </div>
+            </div>
+            <div class="content">
+              <h3 class="title">Psicología Infantil y de Adolecencia</h3>
+              <p>Estudia todo lo relacionado con el desarrollo infantil desde el nacimiento hasta la adolecencia, es un
+                campo de gran importancia para la pedagogía ya que se centra en los primeros años de vida.</p>
+            </div>
+          </div><!-- feature-item end -->
+          <div class="feature-item wow fadeIn" data-wow-duration="2s" data-wow-delay="0.7s">
+            <div class="icon">
+              <div class="icon-inner">
+                <img th:src="@{/images/icons/investment/3.svg}" alt="icon">
+              </div>
+            </div>
+            <div class="content">
+              <h3 class="title">Psicología Cognitiva Conductual</h3>
+              <p>Se centra en los procesos responsables de la adquisición de conocimientos que incluye el aprendizaje,
+                memoria, lenguaje, razonamiento y precepción.</p>
+            </div>
+          </div><!-- feature-item end -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- features-section end -->
+
+  <!-- invest-section start -->
+  <section class="invest-section pt-120 pb-120 bg_img" data-background="images/investor-bg2.png">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="section-header text-center text-white">
+            <span class="section-subtitle">¡No estás solo!</span>
+            <h2 class="section-title text-dark">Un espacio para ti</h2>
+            <p class="text-dark">Cuando no somos capaces de cambiar una situación, nos enfrentamos al reto de cambiar
+              nosotros mismos. El anhelo de curarnos constituye la mitad de nuestra salud. En el amor siempre hay algo
+              de locura, mas en la locura siempre hay algo de razón.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="banner-content-area">
+            <div class="banner-content text-center">
+              <img class="slogan" th:src="@{/img/psychology/Psychologist-bro.png}" alt="image" width="500em" top="4em">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- invest-section end -->
+
+  <!-- community-section start -->
+  <section class="community-section bg_img" data-background="images/investor-bg.png" id="virtual-dating">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="section-header text-center text-white wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.5s">
+            <span class="section-subtitle">Cambiemos la monotinía</span>
+            <h2 class="section-title text-dark">Citas Virtuales</h2>
+            <p class="text-dark">Mind&Soul cambiará tu vida de manera drástica, ¡elígenos!, vamos a ayudarte sin
+              restricción alguna desde
+              la comodidad de tu hogar</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="community-wrapper">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="community-item">
+                  <div class="icon">
+                    <img th:src="@{/images/icons/community/1.svg}" alt="image">
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Comunicación</h3>
+                    <p>La mejor manera de amarte a sí mismo, conócete y da lo mejor de tí todos los días.</p>
+                  </div>
+                </div><!-- community-item end -->
+                <div class="community-item">
+                  <div class="icon">
+                    <img th:src="@{/images/icons/community/2.svg}" alt="image">
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Seguridad</h3>
+                    <p>Siempre para nosotros será prioridad que te sientas cómodo y nada mejor que desde tu cálido hogar
+                    </p>
+                  </div>
+                </div><!-- community-item end -->
+                <div class="community-item">
+                  <div class="icon">
+                    <img th:src="@{/images/icons/community/3.svg}" alt="image">
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Prioridad</h3>
+                    <p>Siempre ponte primero que cualquier persona, eres importante y eres todo bonito que existe</p>
+                  </div>
+                </div><!-- community-item end -->
+              </div>
+              <div class="col-lg-5">
+                <div class="user-wrapper">
+                  <div class="icon">
+                    <img th:src="@{/images/icons/community/user-icon.svg}" alt="image">
+                  </div>
+                  <span class="caption">18000+ Usuarios</span>
+                  <div class="users-area">
+                    <span class="user-img"><img th:src="@{/images/users/s1.png}" alt="image"></span>
+                    <span class="user-img"><img th:src="@{/images/users/s2.png}" alt="image"></span>
+                    <span class="user-img"><img th:src="@{/images/users/s3.png}" alt="image"></span>
+                    <span class="user-img"><img th:src="@{/images/users/s4.png}" alt="image"></span>
+                    <span class="user-img"><img th:src="@{/images/users/s5.png}" alt="image"></span>
+                    <span class="user-img"><img th:src="@{/images/users/s6.png}" alt="image"></span>
+                    <span class="user-img"><img th:src="@{/images/users/s7.png}" alt="image"></span>
+                    <span class="user-img"><img th:src="@{/images/users/s4.png}" alt="image"></span>
+                    <span class="user-img"><img th:src="@{/images/users/s1.png}" alt="image"></span>
+                  </div>
+                </div>
+                <div class="btn-area text-center">
+                  <a th:href="@{register}" class="btn btn-secondary">REGÍSTRATE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- community-section end -->
+
+  <!-- affiliate-features-section start -->
+  <section class="affiliate-features-section pt-120 pb-120">
+    <div class="shape"><img th:src="@{/images/elements/affiliate-shape.png}" alt="image" id="job"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="affiliate-features-content text-xl-left text-center">
+            <div class="section-header">
+              <span class="section-subtitle">Puedes ser Parte de Nuestros Especialistas!</span>
+              <h2 class="section-title">Ayudanos a crecer como empresa</h2>
+              <p>Para ingresar como médico especialísta a la plataforma contactar directamente con un asesor
+                administrativo </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="row mb-none-30">
+            <div class="col-xl-6 col-lg-4 col-md-6">
+              <div class="affiliate-features-item text-center mb-30">
+                <div class="icon"><img th:src="@{/images/icons/affiliate-features/1.svg}" alt="image"></div>
+                <span class="subtitle">Psicólogos</span>
+                <h3 class="title">Profesionales</h3>
+                <p>Para trabajar con nosotros es necesario que el especialísta haya obtenido un certificado profesional.
+                </p>
+              </div>
+            </div><!-- affiliate-features-item end -->
+            <div class="col-xl-6 col-lg-4 col-md-6">
+              <div class="affiliate-features-item text-center mb-30">
+                <div class="icon"><img th:src="@{/images/icons/affiliate-features/2.svg}" alt="image"></div>
+                <span class="subtitle">Psicólogos</span>
+                <h3 class="title">Independientes</h3>
+                <p>Nuestro sistema brinda la oportunidad de que puedas trabajar desde la comodidad de tu hogar sin
+                  depender de terceros.</p>
+              </div>
+            </div><!-- affiliate-features-item end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- affiliate-features-section end -->
+
+  <!-- footer-section start -->
+  <footer class="footer-section" id="contact">
+    <div class="footer-top bg_img" data-background="images/footer-bg.png">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-header text-white text-center">
+              <h2 class="section-title">MIND&SOUL</h2>
+              <p>¡Únete a más de 14 000 clientes satisfechos de Mind&Soul! <a th:href="@{login}"
+                  class="text-warning">Registrate</a> y suscríbete para recibir todos nuestros servicios de manera
+                gratuita. </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 W-100 align-center">
+            <a><button type="submit" class="btn btn-secondary">¡INICIAR AHORA!<span class="btn-icon"><img
+              th:src="@{/images/icons/paper-plane.png}" alt="icon"></span></button></a>
+          </div>
+        </div>
+        <br><br>
+        <div class="row mb-none-30 aling-center">
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-widget mb-30">
+              <h3 class="widget-title">About Behoof</h3>
+              <ul class="footer-menu-list">
+                <li><a href="#index">Inicio</a></li>
+                <li><a href="#information">Quienes Somos</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#virtual-dating">Citas Virtuales</a></li>
+                <li><a href="#job">Traabaja con Nosotros</a></li>
+              </ul>
+            </div>
+          </div><!-- footer-widget end -->
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-widget mb-30">
+              <h3 class="widget-title">Contacto</h3>
+              <ul class="footer-menu-list">
+                <li><a href="#0">Calle 60B Sur #35A-10</a></li>
+                <li><a href="#0">company@mindandsoul.com</a></li>
+                <li><a href="#0">support@mindandsoul.com</a></li>
+                <li><a href="#0">+808 11233 900</a></li>
+                <li><a href="#0">+57 304 67306 38</a></li>
+              </ul>
+            </div>
+          </div><!-- footer-widget end -->
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="copy-right-text text-md-left text-center mb-md-0 mb-3">Mind&Soul © 2022. Todos los derechos
+              reservados <a th:href="@{index}">Mind&Soul</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer-section end -->
+
+  <!-- scroll-to-top start -->
+  <div class="scroll-to-top">
+    <span class="scroll-icon">
+      <i class="fa fa-rocket"></i>
+    </span>
+  </div>
+  <!-- scroll-to-top end -->
+
+  <script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/jquery.nice-select.js}"></script>
+  <script th:src="@{/js/lightcase.js}"></script>
+  <script th:src="@{/js/owl.carousel.min.js}"></script>
+  <script th:src="@{/js/jquery-ui.min.js}"></script>
+  <script th:src="@{/js/wow.min.js}"></script>
+  <script th:src="@{/js/jquery.waypoints.min.js}"></script>
+  <script th:src="@{/js/jquery.countup.min.js}"></script>
+  <script th:src="@{/js/jquery.paroller.min.js}"></script>
+  <script th:src="@{/js/main.js}"></script>
+</body>
+
+<!-- Mirrored from pixner.net/behoof/demo/home-two.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Mar 2020 15:00:40 GMT -->
+
+</html>
